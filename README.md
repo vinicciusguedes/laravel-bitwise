@@ -15,6 +15,21 @@ Você pode instalar o pacote através do Composer:
 composer require viniciusguedes/laravel-bitwise
 ```
 
+## Compatibilidade: Laravel e PHP
+
+Esta tabela mostra as versões do Laravel e suas versões compatíveis com o PHP.
+
+| Laravel versão | PHP versão   |
+|----------------|------------------------|
+| 11.*           | 8.4, 8.3, 8.2, 8.1, 8.0 |
+| 10.*           | 8.4, 8.3, 8.2, 8.1, 8.0 |
+| 9.*            | 8.4, 8.3, 8.2, 8.1, 8.0 |
+| 8.*            | 8.4, 8.3, 8.2, 8.1, 8.0, 7.4, 7.3 |
+| 7.*            | 8.4, 8.3, 8.2, 8.1, 8.0, 7.4, 7.3, 7.2 |
+| 6.*            | 8.4, 8.3, 8.2, 8.1, 8.0, 7.4, 7.3, 7.2 |
+
+> A tabela de compatibilidade pode ser ajustada de acordo com novas atualizações de versões do PHP ou Laravel.
+
 ## Funcionalidades
 O pacote oferece funções úteis para trabalhar com operações bitwise, como:
 
