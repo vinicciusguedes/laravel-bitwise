@@ -79,7 +79,7 @@ jobs:
             - name: Setup Laravel ${{ matrix.laravel }}
               run: |
                   composer require illuminate/support:${{ matrix.laravel }} --no-update
-                  composer require orchestra/testbench:${{ matrix.laravel }} --no-update
+                  composer require orchestra/testbench:${{ matrix.testbench }} --no-update
                   composer update --${{ matrix.stability }} --prefer-dist --no-progress --no-suggest --no-interaction
 
             - name: Run PHPUnit tests
