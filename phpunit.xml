@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         processIsolation="true"
+         stopOnFailure="true">
+
+    <testsuites>
+        <testsuite name="Application Test">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <directories>
+        <directory suffix="Test.php">./tests</directory>
+    </directories>
+
+    <source ignoreIndirectDeprecations="true" restrictNotices="true" restrictWarnings="true">
+        <include>
+            <directory>./src</directory>
+        </include>
+    </source>
+</phpunit>
