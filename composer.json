@@ -1,0 +1,42 @@
+{
+    "name": "vinicciusguedes/laravel-bitwise",
+    "description": "Pacote para facilitar a manipulação de números usando operações bitwise no Laravel.",
+    "keywords": [
+        "vinicciusguedes",
+        "laravel-bitwise"
+    ],
+    "homepage": "https://github.com/vinicciusguedes/laravel-bitwise",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Viníccius Guedes",
+            "email": "vgndevcode@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2|^8.0",
+        "illuminate/support": "^6.0|7.0|8.0|^9.0|^10.0|^11.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+        "orchestra/testbench": "^4.0|^5.0|^6.0|^7.0|^8.0|^9.0",
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "VG\\LaravelBitwise\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VG\\LaravelBitwise\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "allow-plugins": true
+    },
+    "scripts": {
+        "php-cs-fixer-check": "vendor/bin/php-cs-fixer fix --diff --verbose --dry-run",
+        "php-cs-fixer": "vendor/bin/php-cs-fixer fix --verbose"
+    }
+}

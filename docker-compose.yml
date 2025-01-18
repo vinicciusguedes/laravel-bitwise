@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  laravel-bitwise:
+    build: .
+    container_name: laravel-bitwise
+    tty: true
+    volumes:
+      - .:/var/www
+    networks:
+      - laravel-bitwise-network
+
+networks:
+  laravel-bitwise-network:
+    driver: bridge
