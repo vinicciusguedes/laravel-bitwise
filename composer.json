@@ -3,7 +3,10 @@
     "description": "Pacote para facilitar a manipulação de números usando operações bitwise no Laravel.",
     "keywords": [
         "vinicciusguedes",
-        "laravel-bitwise"
+        "laravel-bitwise",
+        "bitwise",
+        "laravel-packages",
+        "php"
     ],
     "homepage": "https://github.com/vinicciusguedes/laravel-bitwise",
     "license": "MIT",
