@@ -8,13 +8,9 @@
 
     <testsuites>
         <testsuite name="Application Test">
-            <directory>./tests</directory>
+            <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
-
-    <directories>
-        <directory suffix="Test.php">./tests</directory>
-    </directories>
 
     <source ignoreIndirectDeprecations="true" restrictNotices="true" restrictWarnings="true">
         <include>
