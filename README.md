@@ -1,6 +1,7 @@
 # Laravel Bitwise
 
-![version](https://img.shields.io/badge/Version-1.0-blue?style=flat-square)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/vinicciusguedes/laravel-bitwise.svg?style=flat-square)](https://packagist.org/packages/vinicciusguedes/laravel-bitwise/)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/vinicciusguedes/laravel-bitwise/build.yml?style=flat-square)](https://github.com/vinicciusguedes/laravel-bitwise/actions)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
 Pacote para facilitar a manipulação de números usando operações bitwise no Laravel. Ideal para casos de uso como gerenciamento de permissões e flags, fornecendo funções para verificar, ativar, desativar e inverter bits de forma simples e eficiente.
@@ -19,14 +20,14 @@ composer require viniciusguedes/laravel-bitwise
 
 Esta tabela mostra as versões do Laravel e suas versões compatíveis com o PHP.
 
-| Laravel versão | PHP versão   |
-|----------------|------------------------|
-| 11.*           | 8.4, 8.3, 8.2, 8.1, 8.0 |
-| 10.*           | 8.4, 8.3, 8.2, 8.1, 8.0 |
-| 9.*            | 8.4, 8.3, 8.2, 8.1, 8.0 |
-| 8.*            | 8.4, 8.3, 8.2, 8.1, 8.0, 7.4, 7.3 |
-| 7.*            | 8.4, 8.3, 8.2, 8.1, 8.0, 7.4, 7.3, 7.2 |
-| 6.*            | 8.4, 8.3, 8.2, 8.1, 8.0, 7.4, 7.3, 7.2 |
+| Laravel | PHP   |
+|---------------|-----------------------|
+| 11.*          | 8.4, 8.3, 8.2, 8.1, 8.0 |
+| 10.*          | 8.4, 8.3, 8.2, 8.1, 8.0 |
+| 9.*           | 8.4, 8.3, 8.2, 8.1, 8.0 |
+| 8.*           | 8.4, 8.3, 8.2, 8.1, 8.0, 7.4, 7.3 |
+| 7.*           | 8.4, 8.3, 8.2, 8.1, 8.0, 7.4, 7.3, 7.2 |
+| 6.*           | 8.4, 8.3, 8.2, 8.1, 8.0, 7.4, 7.3, 7.2 |
 
 > A tabela de compatibilidade pode ser ajustada de acordo com novas atualizações de versões do PHP ou Laravel.
 
