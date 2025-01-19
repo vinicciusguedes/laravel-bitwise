@@ -243,4 +243,17 @@ class Bitwise
     {
         return decbin($value);
     }
+
+    /**
+     * Inverte bit do valor.
+     * Invert the value bit.
+     *
+     * @param int $value O valor que terá os bits invertidos.
+     * @return int O valor com todos os bits invertidos.
+     */
+    public static function invertBit(int $value): int
+    {
+        return $value ^ 1;
+    }
+
 }

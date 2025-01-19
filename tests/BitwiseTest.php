@@ -216,4 +216,15 @@ class BitwiseTest extends TestCase
 
         $this->assertEquals("101", $result);  // Esperado: ordenado
     }
+
+    /**
+     * Testa a função invertBit
+     */
+    public function testInvertBit()
+    {
+        $number = 1;
+        $result = Bitwise::invertBit($number);
+
+        $this->assertEquals(0, $result);  // Esperado: ordenado
+    }
 }

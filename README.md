@@ -194,5 +194,17 @@ $results = Bitwise::toBinaryString($number);
 // 101
 ```
 
+___
+
+✅ `function invertBit(int $value): int`
+- Inverte bit do valor.
+- Invert the value bit.
+
+```php
+$bit = 1;
+$results = Bitwise::invertBit($bit);
+// 0
+```
+
 ___ 
 **Desenvolvedor:** Viníccius Guedes
