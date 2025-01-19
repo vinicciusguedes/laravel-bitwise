@@ -196,6 +196,18 @@ $results = Bitwise::toBinaryString($number);
 
 ___
 
+✅ `fromBinary(string $value): int`
+- Converte um valor binário de volta para inteiro.
+- Convert a binary value back to integer.
+
+```php
+$number = "101";
+$results = Bitwise::fromBinary($number);
+// 5
+```
+
+___
+
 ✅ `function invertBit(int $value): int`
 - Inverte bit do valor.
 - Invert the value bit.

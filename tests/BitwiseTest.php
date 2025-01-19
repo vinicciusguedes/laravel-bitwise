@@ -218,6 +218,17 @@ class BitwiseTest extends TestCase
     }
 
     /**
+     * Testa a função fromBinary
+     */
+    public function testFromBinary()
+    {
+        $number = "101"; // 5
+        $result = Bitwise::fromBinary($number);
+
+        $this->assertEquals(5, $result);  // Esperado: ordenado
+    }
+
+    /**
      * Testa a função invertBit
      */
     public function testInvertBit()

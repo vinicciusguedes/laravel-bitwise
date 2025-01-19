@@ -245,6 +245,18 @@ class Bitwise
     }
 
     /**
+     * Converte um valor binário de volta para inteiro.
+     * Convert a binary value back to integer.
+     *
+     * @param string $value A string binária.
+     * @return int O valor inteiro correspondente.
+     */
+    public static function fromBinary(string $value): int
+    {
+        return bindec($value);
+    }
+
+    /**
      * Inverte bit do valor.
      * Invert the value bit.
      *
