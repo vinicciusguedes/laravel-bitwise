@@ -22,6 +22,20 @@ class BitwiseTest extends TestCase
     }
 
     /**
+     * Testa a função addBits
+     */
+    public function testAddBits()
+    {
+        $currentValue = 5; // 0101 em binário
+        $bit = [2, 4];
+
+        $result = Bitwise::addBits($currentValue, $bit);
+
+        // Esperamos 7 (0111 em binário)
+        $this->assertEquals(7, $result);
+    }
+
+    /**
      * Testa a função addBitInArray com key_type = true
      */
     public function testAddBitInArrayKeyTypeTrue()
@@ -64,6 +78,20 @@ class BitwiseTest extends TestCase
     }
 
     /**
+     * Testa a função removeBits
+     */
+    public function testRemoveBits()
+    {
+        $currentValue = 15; // 1111 em binário
+        $bit = [1, 4];
+
+        $result = Bitwise::removeBits($currentValue, $bit);
+
+        // Esperamos 10 (1010 em binário)
+        $this->assertEquals(10, $result);
+    }
+
+    /**
      * Testa a função hasBit
      */
     public function testHasBitTrue()
@@ -87,6 +115,32 @@ class BitwiseTest extends TestCase
         $result = Bitwise::hasBit($currentValue, $bit);
 
         $this->assertFalse($result);  // O bit 2 não está ativo em 5
+    }
+
+    /**
+     * Testa a função hasAllBits
+     */
+    public function testHasAllBitsTrue()
+    {
+        $currentValue = 15; // 1111 em binário
+        $bitsArray = [1, 2, 4];
+
+        $result = Bitwise::hasAllBits($currentValue, $bitsArray);
+
+        $this->assertTrue($result);  // true
+    }
+
+    /**
+     * Testa a função hasAllBits para bit não presente
+     */
+    public function testHasAllBitsFalse()
+    {
+        $currentValue = 15; // 1111 em binário
+        $bitsArray = [1, 2, 4, 8, 16];
+
+        $result = Bitwise::hasAllBits($currentValue, $bitsArray);
+
+        $this->assertFalse($result);  // false
     }
 
     /**
@@ -138,5 +192,28 @@ class BitwiseTest extends TestCase
         $result = Bitwise::sortBitsByKey($bits);
 
         $this->assertEquals([1 => 1, 2 => 2, 4 => 4], $result);  // Esperado: ordenado
+    }
+
+    /**
+     * Testa a função sortBitsByValue
+     */
+    public function testSortBitsByValue()
+    {
+        $bits = [4,2,1];
+
+        $result = Bitwise::sortBitsByValue($bits);
+
+        $this->assertEquals([2 => 1, 1 => 2, 0 => 4], $result);  // Esperado: ordenado
+    }
+
+    /**
+     * Testa a função toBinaryString
+     */
+    public function testToBinaryString()
+    {
+        $number = 5; // 101
+        $result = Bitwise::toBinaryString($number);
+
+        $this->assertEquals("101", $result);  // Esperado: ordenado
     }
 }

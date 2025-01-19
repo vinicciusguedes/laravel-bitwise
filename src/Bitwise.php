@@ -18,6 +18,23 @@ class Bitwise
     }
 
     /**
+     * Adiciona todos os bits fornecidos no valor atual usando operação OR (|).
+     * Adds all provided bits in the current value using the OR (|) operation.
+     *
+     * @param int $currentValue O valor atual onde os bits estão armazenados.
+     * @param array $bits O array de bits a serem ativados.
+     * @return int Novo valor com todos os bits ativados.
+     */
+    public static function addBits(int $currentValue, array $bits): int
+    {
+        foreach ($bits as $bit) {
+            $currentValue = self::addBit($currentValue, $bit);
+        }
+        return $currentValue;
+    }
+
+
+    /**
      * Adiciona um bit em um array, garantindo que não seja duplicada.
      * Adds a bit to an array, ensuring it is not duplicated.
      *
@@ -64,6 +81,23 @@ class Bitwise
     }
 
     /**
+     * Remove todos os bits fornecidos no valor atual usando operação AND NOT (& ~).
+     * Removes all provided bits in the current value using the AND NOT (& ~) operation.
+     *
+     * @param int $currentValue O valor atual onde os bits estão armazenados.
+     * @param array $bits O array de bits a serem desativados.
+     * @return int Novo valor com todos os bits desativados.
+     */
+    public static function removeBits(int $currentValue, array $bits): int
+    {
+        foreach ($bits as $bit) {
+            $currentValue = self::removeBit($currentValue, $bit);
+        }
+        return $currentValue;
+    }
+
+
+    /**
      * Verifica se um bit específico está ativo no valor atual usando operação AND (&).
      * Checks if a specific bit is active in the current value using the AND (&) operation.
      *
@@ -94,6 +128,24 @@ class Bitwise
         }
 
         return $result;
+    }
+
+    /**
+     * Verifica se todos os bits fornecidos estão ativos no valor.
+     * Checks if all the provided bits are active in the value.
+     *
+     * @param int $bitValue O valor base (bits) que será verificado.
+     * @param array $bits O array de valores dos bits a serem verificados.
+     * @return bool Retorna true se todos os bits estiverem ativos, false caso contrário.
+     */
+    public static function hasAllBits(int $bitValue, array $bits): bool
+    {
+        foreach ($bits as $bit) {
+            if (($bitValue & $bit) !== $bit) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -151,8 +203,8 @@ class Bitwise
     }
 
     /**
-     * Ordena as chaves do array com base nos valores.
-     * Sorts the keys of the array based on the values.
+     * Ordena as chaves do array com base nas chaves.
+     * Sorts the keys of the array based on the keys.
      *
      * @param array $bits O array de bits a ser ordenado.
      * @return array O array de bits ordenado pela chave em ordem crescente.
@@ -163,5 +215,32 @@ class Bitwise
         ksort($bits, SORT_NUMERIC);
 
         return $bits;
+    }
+
+    /**
+     * Ordena array com base nos valores.
+     * Sorts the array based on the values.
+     *
+     * @param array $bits O array de bits a ser ordenado.
+     * @return array O array de bits ordenado pela chave em ordem crescente.
+     */
+    public static function sortBitsByValue(array $bits): array
+    {
+        // Ordena as chaves do array em ordem crescente
+        asort($bits, SORT_NUMERIC);
+
+        return $bits;
+    }
+
+    /**
+     * Converte um valor inteiro para uma string binária.
+     * Converts an integer value to a binary string.
+     *
+     * @param int $value O valor a ser convertido para binário.
+     * @return string A representação binária do valor.
+     */
+    public static function toBinaryString(int $value): string
+    {
+        return decbin($value);
     }
 }

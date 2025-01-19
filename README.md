@@ -42,8 +42,9 @@ O pacote oferece funções úteis para trabalhar com operações bitwise, como:
 
 ## Funções Disponíveis
 
-1. `addBit(int $currentValue, int $bit): int`
-Adiciona um bit ao valor atual usando a operação OR (|).
+✅ `addBit(int $currentValue, int $bit): int`
+- Adiciona um bit ao valor atual usando a operação OR (|).
+- Adds a specific bit to the current value using the OR (|) operation.
 
 ```php
 $currentValue = 5; // 0101 em binário
@@ -53,18 +54,45 @@ $newValue = Bitwise::addBit($currentValue, $bitToAdd); // 7 (0111 em binário)
 
 ___
 
-2. `removeBit(int $currentValue, int $bit): int`
-Remove um bit específico do valor atual usando a operação AND NOT (& ~).
+✅ `addBits(int $currentValue, int $bit): int`
+- Adiciona todos os bits fornecidos no valor atual usando operação OR (|).
+- Adds all provided bits in the current value using the OR (|) operation.
+
+```php
+$currentValue = 5; // 0101 em binário
+$bitToAdd = [2, 4]; 
+$newValue = Bitwise::addBits($currentValue, $bitToAdd); // 7 (0111 em binário)
+```
+
+___
+
+✅ `removeBit(int $currentValue, int $bit): int`
+- Remove um bit específico do valor atual usando operação AND NOT (& ~).
+- Removes a specific bit from the current value using the AND NOT (& ~) operation.
 
 ```php
 $currentValue = 7; // 0111 em binário
 $bitToRemove = 2;  // 0010 em binário
 $newValue = Bitwise::removeBit($currentValue, $bitToRemove); // 5 (0101 em binário)
 ```
+
 ___
 
-3. `hasBit(int $currentValue, int $bit): bool`
-Verifica se um bit específico está ativo no valor atual usando a operação AND (&).
+✅ `removeBits(int $currentValue, array $bits): int`
+- Remove todos os bits fornecidos no valor atual usando operação AND NOT (& ~).
+- Removes all provided bits in the current value using the AND NOT (& ~) operation.
+
+```php
+$currentValue = 15; // 1111 em binário
+$bitToRemove = [1, 4];
+$newValue = Bitwise::removeBits($currentValue, $bitToRemove); // 10 (1010 em binário)
+```
+
+___
+
+✅ `hasBit(int $currentValue, int $bit): bool`
+- Verifica se um bit específico está ativo no valor atual usando a operação AND (&).
+- Checks if a specific bit is active in the current value using the AND (&) operation.
 
 ```php
 $currentValue = 5;  // 0101 em binário
@@ -74,8 +102,21 @@ $isActive = Bitwise::hasBit($currentValue, $bitToCheck); // true
 
 ___
 
-4. `getActiveBits(int $value, bool $key_type = true, bool $order = true): array`
-Retorna todos os bits ativos no valor fornecido.
+✅ `hasAllBits(int $bitValue, array $bits): bool`
+- Verifica se todos os bits fornecidos estão ativos no valor.
+- Checks if all the provided bits are active in the value.
+
+```php
+$currentValue = 15; // 1111 em binário
+$bitsArray = [1, 2, 4];
+$allBitsActive = Bitwise::hasAllBits($currentValue, $bitsArray); // true
+```
+
+___
+
+✅ `getActiveBits(int $value, bool $key_type = true, bool $order = true): array`
+- Retorna todos os bits ativos no valor fornecido.
+- Returns an array of all active bits in the value.
 
 ```php
 $value = 7;  // 0111 em binário
@@ -84,8 +125,9 @@ $activeBits = Bitwise::getActiveBits($value); // [1, 2, 4]
 
 ___
 
-5. `sumActiveBits(array $bits): int`
-Retorna a soma dos bits ativos.
+✅ `sumActiveBits(array $bits): int`
+- Retorna o valor total da soma dos bits ativos.
+- Returns the total value of the sum of the active bits.
 
 ```php
 $bits = [1, 2, 4];
@@ -94,8 +136,9 @@ $sum = Bitwise::sumActiveBits($bits); // 7
 
 ___
 
-6. `addBitInArray(array $array, int $bit, bool $key_type = true, bool $order = true): array`
-Adiciona um bit a um array, garantindo que o valor seja único.
+✅ `addBitInArray(array $array, int $bit, bool $key_type = true, bool $order = true): array`
+- Adiciona um bit a um array, garantindo que o valor seja único.
+- Adds a bit to an array, ensuring it is not duplicated.
 
 ```php
 $bitsArray = [1, 2];
@@ -104,14 +147,51 @@ $newArray = Bitwise::addBitInArray($bitsArray, 4); // [1, 2, 4]
 
 ___
 
-7. `hasBitsInArray(int $bitValue, array $bits): array`
-Verifica se cada valor de um array está presente nos bits de um valor dado.
+✅ `hasBitsInArray(int $bitValue, array $bits): array`
+- Verifica se cada valor de um array está presente nos bits de um valor dado.
+- Checks if each value in an array is present in the bits of a given value.
 
 ```php
 $bitValue = 7;  // 0111 em binário
 $bitsToCheck = [1, 2, 4];
 $results = Bitwise::hasBitsInArray($bitValue, $bitsToCheck);
 // [1 => true, 2 => true, 4 => true]
+```
+
+___
+
+✅ `sortBitsByKey(array $bits): array`
+- Ordena as chaves do array com base nas chaves.
+- Sorts the keys of the array based on the keys.
+
+```php
+$bitsToCheck = [4 => 4, 2 => 2, 1 => 1];
+$results = Bitwise::sortBitsByKey($bitsToCheck);
+// [1 => 1, 2 => 2, 4 => 4]
+```
+
+___
+
+✅ `sortBitsByValue(array $bits): array`
+- Ordena array com base nos valores.
+- Sorts the array based on the values.
+
+```php
+$bitsToCheck = [4,2,1];
+$results = Bitwise::sortBitsByValue($bitsToCheck);
+// [2 => 1, 1 => 2, 0 => 4]
+```
+
+___
+
+✅ `toBinaryString(int $value): string`
+- Converte um valor inteiro para uma string binária.
+- Converts an integer value to a binary string.
+
+```php
+$number = 5;
+$results = Bitwise::toBinaryString($number);
+// 101
 ```
 
 ___ 
