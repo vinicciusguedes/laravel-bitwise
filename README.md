@@ -13,7 +13,7 @@ Pacote para facilitar a manipulação de números usando operações bitwise no 
 Você pode instalar o pacote através do Composer:
 
 ```bash
-composer require viniciusguedes/laravel-bitwise
+composer require vinicciusguedes/laravel-bitwise
 ```
 
 ## Compatibilidade: Laravel e PHP
